@@ -1,13 +1,13 @@
 import { ObjectDirective, ObjectPlugin } from "vue";
 import { registerHotkey } from "@ramstack/hotkey";
 
-const optionKeys = ["stop", "passive", "prevent", "once", "capture", "window", "document"];
+const optionKeys = ["stop", "passive", "prevent", "once", "capture", "trusted", "window", "document"];
 
 /**
  * Represents an event triggered by a hotkey.
  * Extends the standard {@link KeyboardEvent} to include additional {@link hotkey} property.
  */
-interface HotkeyEvent extends KeyboardEvent {
+export interface HotkeyEvent extends KeyboardEvent {
     /**
      * Gets the hotkey that triggered this event.
      */
@@ -18,10 +18,11 @@ export const vHotkey: ObjectDirective<HTMLElement, (e: HotkeyEvent) => void> = {
     mounted(el, { arg, modifiers, value }) {
         const {
             stop,
-            prevent,
             passive,
+            prevent,
+            once,
             capture,
-            once
+            trusted
         } = modifiers;
 
         const target = modifiers.window   ? window :
@@ -42,7 +43,8 @@ export const vHotkey: ObjectDirective<HTMLElement, (e: HotkeyEvent) => void> = {
                 {
                     capture,
                     passive,
-                    once
+                    once,
+                    trusted
                 }));
     },
 
