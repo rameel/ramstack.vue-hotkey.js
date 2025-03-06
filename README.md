@@ -1,4 +1,6 @@
 # Vue-Hotkey
+[![NPM](https://img.shields.io/npm/v/@ramstack/vue-hotkey)](https://www.npmjs.com/package/@ramstack/vue-hotkey)
+[![MIT](https://img.shields.io/github/license/rameel/ramstack.vue-hotkey.js)](https://github.com/rameel/ramstack.vue-hotkey.js/blob/main/LICENSE)
 
 `@ramstack/vue-hotkey` is a lightweight package that simplifies the handling of keyboard shortcuts within Vue applications.
 
