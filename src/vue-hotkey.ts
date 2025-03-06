@@ -1,13 +1,13 @@
 import { ObjectDirective, ObjectPlugin } from "vue";
 import { registerHotkey } from "@ramstack/hotkey";
 
-const optionKeys = ["stop", "passive", "prevent", "once", "capture", "window", "document"];
+const option_keys = ["stop", "passive", "prevent", "once", "capture", "trusted", "window", "document"];
 
 /**
  * Represents an event triggered by a hotkey.
  * Extends the standard {@link KeyboardEvent} to include additional {@link hotkey} property.
  */
-interface HotkeyEvent extends KeyboardEvent {
+export interface HotkeyEvent extends KeyboardEvent {
     /**
      * Gets the hotkey that triggered this event.
      */
@@ -18,17 +18,18 @@ export const vHotkey: ObjectDirective<HTMLElement, (e: HotkeyEvent) => void> = {
     mounted(el, { arg, modifiers, value }) {
         const {
             stop,
-            prevent,
             passive,
+            prevent,
+            once,
             capture,
-            once
+            trusted
         } = modifiers;
 
         const target = modifiers.window   ? window :
                        modifiers.document ? document : el;
 
-        el[createKey(modifiers)] = Object.keys(modifiers)
-            .filter(k => !optionKeys.includes(k))
+        el[create_key(modifiers)] = Object.keys(modifiers)
+            .filter(k => !option_keys.includes(k))
             .map(hotkey => registerHotkey(
                 target,
                 hotkey,
@@ -42,12 +43,13 @@ export const vHotkey: ObjectDirective<HTMLElement, (e: HotkeyEvent) => void> = {
                 {
                     capture,
                     passive,
-                    once
+                    once,
+                    trusted
                 }));
     },
 
     unmounted(el, binding) {
-        const key = createKey(binding.modifiers);
+        const key = create_key(binding.modifiers);
         const disposes = el[key] as (() => void)[];
         disposes?.forEach(r => r());
         el[key] = null;
@@ -64,6 +66,6 @@ export {
     registerHotkey
 }
 
-function createKey(modifiers: Record<string, boolean>): string {
+function create_key(modifiers: Record<string, boolean>): string {
     return `__hotkey[${ Object.keys(modifiers).join("+") }]`;
 }
