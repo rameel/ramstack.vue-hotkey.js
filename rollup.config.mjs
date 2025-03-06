@@ -3,7 +3,7 @@ import terser from "@rollup/plugin-terser";
 import typescript from '@rollup/plugin-typescript';
 import resolve from "@rollup/plugin-node-resolve";
 
-const terserOptions = {
+const terser_options = {
     output: {
         comments: false
     },
@@ -28,7 +28,7 @@ export default [{
     }, {
         file: "dist/vue-hotkey.esm.min.js",
         format: "esm",
-        plugins: [terser(terserOptions)]
+        plugins: [terser(terser_options)]
     }, {
         name: "window",
         file: "dist/vue-hotkey.js",
@@ -39,7 +39,7 @@ export default [{
         file: "dist/vue-hotkey.min.js",
         format: "iife",
         extend: true,
-        plugins: [terser(terserOptions)]
+        plugins: [terser(terser_options)]
     }],
     plugins: [
         resolve(),
