@@ -107,6 +107,7 @@ the `vHotkey` directive provides appropriate event modifiers.
 * `.passive`
 * `.capture`
 * `.once`
+* `.trusted`
 
 ```vue
 <!-- prevent the default behavior for the keyboard event -->
@@ -116,7 +117,7 @@ the `vHotkey` directive provides appropriate event modifiers.
 <div v-hotkey.stop.ctrl+s="event => save(event)"></div>
 
 <!-- modifiers can be chained -->
-<div v-hotkey.ctrl+s.prevent.stop="event => save(event)"></div>
+<div v-hotkey.ctrl+s.prevent.stop.trusted="event => save(event)"></div>
 ```
 
 ### Alternative hotkeys
