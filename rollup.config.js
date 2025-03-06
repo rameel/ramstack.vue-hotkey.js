@@ -23,25 +23,30 @@ const terser_options = {
 
 export default [{
     input: "src/vue-hotkey.ts",
-    output: [{
-        file: "dist/vue-hotkey.esm.js",
-        format: "esm"
-    }, {
-        file: "dist/vue-hotkey.esm.min.js",
-        format: "esm",
-        plugins: [terser(terser_options)]
-    }, {
-        name: "window",
-        file: "dist/vue-hotkey.js",
-        format: "iife",
-        extend: true
-    }, {
-        name: "window",
-        file: "dist/vue-hotkey.min.js",
-        format: "iife",
-        extend: true,
-        plugins: [terser(terser_options)]
-    }],
+    output: [
+        {
+            file: "dist/vue-hotkey.esm.js",
+            format: "esm"
+        },
+        {
+            file: "dist/vue-hotkey.esm.min.js",
+            format: "esm",
+            plugins: [terser(terser_options)]
+        },
+        {
+            name: "window",
+            file: "dist/vue-hotkey.js",
+            format: "iife",
+            extend: true
+        },
+        {
+            name: "window",
+            file: "dist/vue-hotkey.min.js",
+            format: "iife",
+            extend: true,
+            plugins: [terser(terser_options)]
+        }
+    ],
     plugins: [
         resolve(),
         typescript(),
