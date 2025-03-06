@@ -31,14 +31,14 @@
     "vue": "^3.3.0"
   },
   "devDependencies": {
-    "@ramstack/hotkey": "^1.0.2",
-    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@ramstack/hotkey": "^1.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.6",
-    "rimraf": "^5.0.5",
-    "rollup": "^4.9.6",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.34.9",
     "rollup-plugin-bundle-size": "^1.0.3",
-    "terser": "^5.27.0",
-    "tslib": "^2.6.2"
+    "terser": "^5.39.0",
+    "tslib": "^2.8.1"
   }
 }
