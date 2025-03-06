@@ -121,7 +121,9 @@ the `vHotkey` directive provides appropriate event modifiers.
 ```
 
 ### Alternative hotkeys
-You can define multiple hotkeys for a single action if you need to. In the example, a single action is triggered for both `Ctrl + S` and `Shift + S`. To determine which of hotkeys triggered the event, access the `hotkey` property, which contains the string representation of the hotkey.
+You can define multiple hotkeys for a single action if you need to. In the example, a single action is triggered
+for both `Ctrl + S` and `Shift + S`. To determine which of hotkeys triggered the event, access the `hotkey` property,
+which contains the string representation of the hotkey.
 ```vue
 <div v-hotkey.ctrl+s.shift+s.prevent.stop="event => console.log(event.hotkey)"></div>
 ```
@@ -141,9 +143,7 @@ The default event is `keydown`.
 ```
 
 ### Exclude elements from hotkey handling
-
-If you wish to prevent hotkey handling on certain elements,
-add the `data-hotkey-ignore` attribute to the respective element.
+If you wish to prevent hotkey handling on certain elements, add the `data-hotkey-ignore` attribute to the respective element.
 ```html
 <div id="app" v-hotkey.shift+k="...">
     ...
@@ -152,8 +152,7 @@ add the `data-hotkey-ignore` attribute to the respective element.
 </div>
 ```
 
-Alternatively, apply it to the parent if you want to exclude
-an entire group of elements at once.
+Alternatively, apply it to the parent if you want to exclude an entire group of elements at once.
 ```html
 <div id="app" v-hotkey.shift+k="...">
     ...
@@ -164,14 +163,9 @@ an entire group of elements at once.
 </div>
 ```
 
-## Changelog
-
-#### [1.1.0]
-- Add hotkey property to determinie which of hotkeys triggered the event
-- Add Vue plugin
-- Update `@ramstack/hotkey` package
-- Export `registerHotkey` function
-
+## Contributions
+Bug reports and contributions are welcome.
 
 ## License
-This package is released under the **MIT License**.
+This package is released as open source under the **MIT License**.
+See the [LICENSE](https://github.com/rameel/vue-hotkey/blob/main/LICENSE) file for more details.
