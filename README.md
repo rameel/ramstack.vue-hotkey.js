@@ -168,4 +168,4 @@ Bug reports and contributions are welcome.
 
 ## License
 This package is released as open source under the **MIT License**.
-See the [LICENSE](https://github.com/rameel/vue-hotkey/blob/main/LICENSE) file for more details.
+See the [LICENSE](https://github.com/rameel/ramstack.vue-hotkey.js/blob/main/LICENSE) file for more details.

@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   publish:
-    if: github.repository == 'rameel/vue-hotkey'
+    if: github.repository == 'rameel/ramstack.vue-hotkey.js'
     name: "Publish Packages"
     runs-on: ubuntu-latest
 
