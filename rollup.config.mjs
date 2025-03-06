@@ -1,3 +1,4 @@
+import path from "node:path";
 import size from "rollup-plugin-bundle-size";
 import terser from "@rollup/plugin-terser";
 import typescript from '@rollup/plugin-typescript';
@@ -44,6 +45,19 @@ export default [{
     plugins: [
         resolve(),
         typescript(),
+        trim_ws(),
         size()
     ]
 }]
+
+function trim_ws() {
+    return {
+        name: "trim-ws",
+        generateBundle(options, bundle) {
+            if (options.file.match(/\.js$/)) {
+                const key = path.basename(options.file);
+                bundle[key].code = bundle[key].code.trim();
+            }
+        }
+    };
+}
