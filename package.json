@@ -1,7 +1,7 @@
 {
   "name": "@ramstack/vue-hotkey",
   "description": "A lightweight package simplifies the handling of keyboard shortcuts within Vue applications. No external dependencies",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "main": "dist/vue-hotkey.esm.js",
   "module": "dist/vue-hotkey.esm.js",
