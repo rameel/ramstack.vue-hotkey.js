@@ -3,6 +3,12 @@
   "description": "A lightweight package simplifies the handling of keyboard shortcuts within Vue applications. No external dependencies",
   "version": "1.2.0",
   "type": "module",
+  "author": "rameel <rameel-b@hotmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rameel/ramstack.vue-hotkey.js.git"
+  },
   "exports": {
     ".": {
       "import": {
@@ -16,12 +22,6 @@
     "README.md",
     "LICENSE"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rameel/ramstack.vue-hotkey.js.git"
-  },
-  "author": "rameel <rameel-b@hotmail.com>",
-  "license": "MIT",
   "scripts": {
     "build": "rollup -c",
     "prebuild": "npm run clean",
