@@ -33,7 +33,7 @@
     "shortcut"
   ],
   "peerDependencies": {
-    "vue": "^3.3.0"
+    "vue": "^3.4.0"
   },
   "devDependencies": {
     "@ramstack/hotkey": "^1.1.1",
