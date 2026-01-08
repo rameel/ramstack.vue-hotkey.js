@@ -3,9 +3,14 @@
   "description": "A lightweight package simplifies the handling of keyboard shortcuts within Vue applications. No external dependencies",
   "version": "1.2.0",
   "type": "module",
-  "main": "dist/vue-hotkey.esm.js",
-  "module": "dist/vue-hotkey.esm.js",
-  "types": "dist/types/vue-hotkey.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/vue-hotkey.d.ts",
+        "default": "./dist/vue-hotkey.esm.js"
+      }
+    }
+  },
   "files": [
     "dist",
     "README.md",
