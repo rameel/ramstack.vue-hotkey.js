@@ -25,7 +25,8 @@
   "scripts": {
     "build": "rollup -c",
     "prebuild": "npm run clean",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "size-report": "node scripts/compare-package-sizes.js"
   },
   "keywords": [
     "hotkey",
