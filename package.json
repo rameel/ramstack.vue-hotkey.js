@@ -3,24 +3,30 @@
   "description": "A lightweight package simplifies the handling of keyboard shortcuts within Vue applications. No external dependencies",
   "version": "1.2.0",
   "type": "module",
-  "main": "dist/vue-hotkey.esm.js",
-  "module": "dist/vue-hotkey.esm.js",
-  "types": "dist/types/vue-hotkey.d.ts",
+  "author": "rameel <rameel-b@hotmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rameel/ramstack.vue-hotkey.js.git"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/vue-hotkey.d.ts",
+        "default": "./dist/vue-hotkey.esm.js"
+      }
+    }
+  },
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rameel/ramstack.vue-hotkey.js.git"
-  },
-  "author": "rameel <rameel-b@hotmail.com>",
-  "license": "MIT",
   "scripts": {
     "build": "rollup -c",
     "prebuild": "npm run clean",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "size-report": "node scripts/compare-package-sizes.js"
   },
   "keywords": [
     "hotkey",
@@ -28,17 +34,17 @@
     "shortcut"
   ],
   "peerDependencies": {
-    "vue": "^3.3.0"
+    "vue": "^3.4.0"
   },
   "devDependencies": {
-    "@ramstack/hotkey": "^1.1.0",
-    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@ramstack/hotkey": "^1.1.1",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^12.1.2",
-    "rimraf": "^6.0.1",
-    "rollup": "^4.34.9",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "rimraf": "^6.1.2",
+    "rollup": "^4.55.1",
     "rollup-plugin-bundle-size": "^1.0.3",
-    "terser": "^5.39.0",
+    "terser": "^5.44.1",
     "tslib": "^2.8.1"
   }
 }
