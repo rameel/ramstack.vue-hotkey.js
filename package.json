@@ -23,9 +23,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "prebuild": "npm run clean",
-    "clean": "rimraf dist",
+    "build": "rimraf dist && rollup -c",
     "size-report": "node scripts/compare-package-sizes.js"
   },
   "keywords": [
