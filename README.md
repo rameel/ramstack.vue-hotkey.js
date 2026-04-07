@@ -68,36 +68,34 @@ You can find them here [Key values for keyboard events](https://developer.mozill
 
 In addition, there are also aliases for some key names:
 
-```js
+```ts
 const aliases: Record<string, string> = {
-    "esc"         : "escape",
-    "ins"         : "insert",
-    "del"         : "delete",
-    "up"          : "arrowup",
-    "down"        : "arrowdown",
-    "right"       : "arrowright",
-    "left"        : "arrowleft",
-    "pgup"        : "pageup",
-    "pgdn"        : "pagedown",
-    "break"       : "pause",
-    "scroll"      : "scrolllock",
-    "scrlk"       : "scrolllock",
-    "prtscr"      : "printscreen",
-    "win"         : "meta",
-    "windows"     : "meta",
-    "cmd"         : "meta",
-    "command"     : "meta",
-    "comma"       : ",",
-    "period"      : ".",
-    "quote"       : "\"",
-    "singlequote" : "'",
-    "colon"       : ":",
-    "semicolon"   : ";",
-    "plus"        : "+",
-    "minus"       : "-",
-    "tilde"       : "~",
-    "equal"       : "=",
-    "slash"       : "/"
+    "esc"     : "escape",
+    "ins"     : "insert",
+    "del"     : "delete",
+    "up"      : "arrowup",
+    "down"    : "arrowdown",
+    "right"   : "arrowright",
+    "left"    : "arrowleft",
+    "pgup"    : "pageup",
+    "pgdn"    : "pagedown",
+    "break"   : "pause",
+    "scroll"  : "scrolllock",
+    "scrlk"   : "scrolllock",
+    "prtscr"  : "printscreen",
+    "win"     : "meta",
+    "windows" : "meta",
+    "cmd"     : "meta",
+    "command" : "meta",
+    ","       : "comma",
+    "."       : "period",
+    "/"       : "slash",
+    "\\"      : "backslash",
+    ";"       : "semicolon",
+    "="       : "equal",
+    "`"       : "backquote",
+    "]"       : "bracketright",
+    "["       : "bracketleft",
 };
 ```
 
@@ -124,7 +122,7 @@ the `vHotkey` directive provides appropriate event modifiers.
 
 ### Alternative hotkeys
 You can define multiple hotkeys for a single action if you need to. In the example, a single action is triggered
-for both `Ctrl + S` and `Shift + S`. To determine which of hotkeys triggered the event, access the `hotkey` property,
+for both `Ctrl + S` and `Shift + S`. To determine which hotkey triggered the event, access the `hotkey` property,
 which contains the string representation of the hotkey.
 ```vue
 <div v-hotkey.ctrl+s.shift+s.prevent.stop="event => console.log(event.hotkey)"></div>
@@ -138,7 +136,7 @@ Use the `window` or `document` modifiers to listen for events globally at the pa
 ```
 
 ### Event name to listen for
-To specify the event name to be listened for, use the argument directive.
+To specify the event name to be listened for, use the directive's argument.
 The default event is `keydown`.
 ```vue
 <div v-hotkey:keyup.ctrl+k="() => { console.log('Search...') }"></div>
