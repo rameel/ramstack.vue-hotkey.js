@@ -1,6 +1,8 @@
-coverage
+coverage/
 node_modules/
 .idea/
 .vscode/
 .vs/
 dist/
+playwright-report/
+test-results/
